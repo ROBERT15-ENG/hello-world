@@ -16,13 +16,15 @@ python3 scripts/05_dashboard_preview.py --media-copy /cursor/stores/self/media/d
 
 ## Pipeline
 
-| Script | Purpose |
-|--------|---------|
-| `01_generate_data.py` | Create `data/manufacturing_operations.csv` (≥5,000 rows) |
-| `02_preprocess.py` | Clean, impute, encode → `manufacturing_operations_clean.csv` |
-| `03_eda_and_features.py` | Engineered features, EDA figures → `outputs/figures/` |
-| `04_train_models.py` | Failure classification + downtime regression metrics |
-| `05_dashboard_preview.py` | Dashboard-style PNG for report appendix |
+Run as scripts **or** open the matching notebooks in `notebooks/` (Google Colab / Jupyter).
+
+| Step | Script | Notebook | Purpose |
+|------|--------|----------|---------|
+| 1 | `01_generate_data.py` | `01_generate_data.ipynb` | Create `data/manufacturing_operations.csv` (≥5,000 rows) |
+| 2 | `02_preprocess.py` | `02_preprocess.ipynb` | Clean, impute, encode → `manufacturing_operations_clean.csv` |
+| 3 | `03_eda_and_features.py` | `03_eda_and_features.ipynb` | Engineered features, EDA figures → `outputs/figures/` |
+| 4 | `04_train_models.py` | `04_train_models.ipynb` | Failure classification + downtime regression metrics |
+| 5 | `05_dashboard_preview.py` | `05_dashboard_preview.ipynb` | Dashboard-style PNG for report appendix |
 
 ## Outputs
 

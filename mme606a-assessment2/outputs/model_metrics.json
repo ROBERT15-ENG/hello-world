@@ -1,0 +1,164 @@
+{
+  "classification": {
+    "logistic_regression": {
+      "accuracy": 0.7974203338391502,
+      "f1_macro": 0.7433401964409572,
+      "roc_auc": 0.8580571581913323,
+      "confusion_matrix": [
+        [
+          828,
+          200
+        ],
+        [
+          67,
+          223
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9251396648044693,
+          "recall": 0.8054474708171206,
+          "f1-score": 0.8611544461778471,
+          "support": 1028.0
+        },
+        "1": {
+          "precision": 0.5271867612293144,
+          "recall": 0.7689655172413793,
+          "f1-score": 0.6255259467040674,
+          "support": 290.0
+        },
+        "accuracy": 0.7974203338391502,
+        "macro avg": {
+          "precision": 0.7261632130168918,
+          "recall": 0.78720649402925,
+          "f1-score": 0.7433401964409572,
+          "support": 1318.0
+        },
+        "weighted avg": {
+          "precision": 0.8375779485398298,
+          "recall": 0.7974203338391502,
+          "f1-score": 0.809309025201067,
+          "support": 1318.0
+        }
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.802731411229135,
+      "f1_macro": 0.7372408293460926,
+      "roc_auc": 0.8435562860593051,
+      "confusion_matrix": [
+        [
+          858,
+          170
+        ],
+        [
+          90,
+          200
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.9050632911392406,
+          "recall": 0.8346303501945526,
+          "f1-score": 0.868421052631579,
+          "support": 1028.0
+        },
+        "1": {
+          "precision": 0.5405405405405406,
+          "recall": 0.6896551724137931,
+          "f1-score": 0.6060606060606061,
+          "support": 290.0
+        },
+        "accuracy": 0.802731411229135,
+        "macro avg": {
+          "precision": 0.7228019158398906,
+          "recall": 0.7621427613041729,
+          "f1-score": 0.7372408293460926,
+          "support": 1318.0
+        },
+        "weighted avg": {
+          "precision": 0.8248572231015904,
+          "recall": 0.802731411229135,
+          "f1-score": 0.8106937920051889,
+          "support": 1318.0
+        }
+      }
+    },
+    "gradient_boosting": {
+      "accuracy": 0.8292867981790591,
+      "f1_macro": 0.7210471806999077,
+      "roc_auc": 0.847086743593184,
+      "confusion_matrix": [
+        [
+          957,
+          71
+        ],
+        [
+          154,
+          136
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.8613861386138614,
+          "recall": 0.9309338521400778,
+          "f1-score": 0.8948106591865358,
+          "support": 1028.0
+        },
+        "1": {
+          "precision": 0.6570048309178744,
+          "recall": 0.4689655172413793,
+          "f1-score": 0.5472837022132797,
+          "support": 290.0
+        },
+        "accuracy": 0.8292867981790591,
+        "macro avg": {
+          "precision": 0.759195484765868,
+          "recall": 0.6999496846907286,
+          "f1-score": 0.7210471806999077,
+          "support": 1318.0
+        },
+        "weighted avg": {
+          "precision": 0.8164160481496457,
+          "recall": 0.8292867981790591,
+          "f1-score": 0.818344181552056,
+          "support": 1318.0
+        }
+      }
+    },
+    "best_classifier": "logistic_regression"
+  },
+  "regression_downtime": {
+    "ridge": {
+      "rmse": 0.5754842650279495,
+      "mae": 0.27233650553988176,
+      "r2": 0.9814765605505638
+    },
+    "random_forest_reg": {
+      "rmse": 0.535383555677817,
+      "mae": 0.1348025129475123,
+      "r2": 0.9839681080112112
+    }
+  },
+  "split": "75/25 stratified (classification), random (regression)",
+  "features": [
+    "Operating_Hours",
+    "Power_Consumption (kWh)",
+    "Temperature (\u00b0C)",
+    "Vibration_Level (mm/s)",
+    "Maintenance_Cost (USD)",
+    "Downtime (Hours)",
+    "Faults_Reported",
+    "Efficiency (%)",
+    "Output_Units",
+    "Age_Years",
+    "Machine_Type_Code",
+    "Location_Code",
+    "Energy_Intensity_kWh_per_hr",
+    "Maintenance_Cost_per_hr",
+    "Availability_Ratio",
+    "Fault_Rate_per_100h",
+    "Days_Since_Maintenance",
+    "Vibration_Temp_Index"
+  ]
+}

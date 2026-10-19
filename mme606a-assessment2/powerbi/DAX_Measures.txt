@@ -1,0 +1,52 @@
+// MME606A Assessment 2 — Power BI DAX measures
+// Table name assumed: ManufacturingOps (load manufacturing_operations_featured.csv)
+
+Total Operating Hours = SUM ( ManufacturingOps[Operating_Hours] )
+
+Total Power kWh = SUM ( ManufacturingOps[Power_Consumption (kWh)] )
+
+Total Downtime Hours = SUM ( ManufacturingOps[Downtime (Hours)] )
+
+Total Maintenance USD = SUM ( ManufacturingOps[Maintenance_Cost (USD)] )
+
+Avg Efficiency = AVERAGE ( ManufacturingOps[Efficiency (%)] )
+
+Failure Rate % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( ManufacturingOps ), ManufacturingOps[Predicted_Failure] = "Yes" ),
+    COUNTROWS ( ManufacturingOps ),
+    0
+) * 100
+
+Avg Energy Intensity =
+AVERAGE ( ManufacturingOps[Energy_Intensity_kWh_per_hr] )
+
+Avg Availability =
+AVERAGE ( ManufacturingOps[Availability_Ratio] ) * 100
+
+Faults per 100h =
+AVERAGE ( ManufacturingOps[Fault_Rate_per_100h] )
+
+Machines at Risk =
+CALCULATE (
+    DISTINCTCOUNT ( ManufacturingOps[Machine_ID] ),
+    ManufacturingOps[Predicted_Failure] = "Yes"
+)
+
+Downtime per Machine =
+DIVIDE ( [Total Downtime Hours], DISTINCTCOUNT ( ManufacturingOps[Machine_ID] ), 0 )
+
+Power per Operating Hour =
+DIVIDE ( [Total Power kWh], [Total Operating Hours], 0 )
+
+YoY Downtime Change % =
+VAR ThisYear = [Total Downtime Hours]
+VAR PriorYear =
+    CALCULATE (
+        [Total Downtime Hours],
+        DATEADD ( ManufacturingOps[Record_Month_DT], -1, YEAR )
+    )
+RETURN DIVIDE ( ThisYear - PriorYear, PriorYear, BLANK () ) * 100
+
+High Vibration Flag =
+IF ( AVERAGE ( ManufacturingOps[Vibration_Level (mm/s)] ) > 10, "Alert", "Normal" )

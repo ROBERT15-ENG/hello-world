@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "Operating_Hours": {
+      "mean": 330.28,
+      "median": 326.598,
+      "std": 83.328,
+      "min": 83.722,
+      "max": 631.293
+    },
+    "Power_Consumption (kWh)": {
+      "mean": 3681.019,
+      "median": 3526.55,
+      "std": 1498.899,
+      "min": 772.5,
+      "max": 11371.905
+    },
+    "Downtime (Hours)": {
+      "mean": 3.899,
+      "median": 2.945,
+      "std": 4.334,
+      "min": 0.0,
+      "max": 22.02
+    },
+    "Efficiency (%)": {
+      "mean": 78.87,
+      "median": 79.125,
+      "std": 4.987,
+      "min": 57.66,
+      "max": 95.48
+    },
+    "Vibration_Level (mm/s)": {
+      "mean": 8.353,
+      "median": 8.173,
+      "std": 1.442,
+      "min": 4.434,
+      "max": 14.752
+    }
+  },
+  "efficiency_skew": -0.2647416012747288,
+  "failure_rate_overall": 0.22030360531309298,
+  "engineered_features": [
+    "Energy_Intensity_kWh_per_hr",
+    "Maintenance_Cost_per_hr",
+    "Availability_Ratio",
+    "Fault_Rate_per_100h",
+    "Days_Since_Maintenance",
+    "Vibration_Temp_Index"
+  ]
+}

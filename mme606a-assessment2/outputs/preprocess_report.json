@@ -1,0 +1,45 @@
+{
+  "initial_rows": 5282,
+  "steps": [
+    {
+      "action": "drop_duplicate_machine_month",
+      "removed": 12
+    },
+    {
+      "action": "nullify_negative_downtime",
+      "count": 8
+    },
+    {
+      "action": "cap_outliers_Power_Consumption (kWh)",
+      "capped": 3,
+      "upper": 11371.904999999999
+    },
+    {
+      "action": "cap_outliers_Vibration_Level (mm/s)",
+      "capped": 18,
+      "upper": 14.752499999999998
+    },
+    {
+      "action": "cap_outliers_Downtime (Hours)",
+      "capped": 34,
+      "upper": 22.02
+    },
+    {
+      "action": "median_imputation",
+      "columns": [
+        "Operating_Hours",
+        "Power_Consumption (kWh)",
+        "Temperature (\u00b0C)",
+        "Vibration_Level (mm/s)",
+        "Maintenance_Cost (USD)",
+        "Downtime (Hours)",
+        "Faults_Reported",
+        "Efficiency (%)",
+        "Output_Units",
+        "Age_Years"
+      ]
+    }
+  ],
+  "final_rows": 5270,
+  "missing_after": 0
+}

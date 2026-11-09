@@ -1,25 +1,20 @@
 # MIA605A Assessment 3 — Paper B (Pipeline Leakage ML)
 
-Dual-accelerometer feature dataset for **multiclass leak-type** (classes 0–4) and **binary leak detection** tasks.
+Dual-accelerometer pipeline for **multiclass leak-type** (classes 0–4) and **binary leak detection** on the official Moodle CSV.
 
 **Student placeholders:** `STUDENT_NAME`, `STUDENT_ID`
 
 ## Data
 
-Place the official Moodle file at `data/Assessment3B_data.csv`. If missing, run:
+Primary source: `data/Assessment3B_data.csv` (Moodle upload, ~100k raw samples: `Sample`, `A1`, `A2`, `Leak status`). See `data/DATA_SOURCE.md`.
 
-```bash
-python3 scripts/00_generate_data.py
-```
-
-This workspace used a **synthetic fallback** because the provided CSV was not found locally — replace with the official file and re-run the pipeline before submission.
+`scripts/00_generate_data.py` remains a **synthetic fallback only** for offline development — do not use for submission.
 
 ## Pipeline
 
 ```bash
 cd mia605a-assessment3b
 python3 -m pip install -r requirements.txt
-python3 scripts/00_generate_data.py
 python3 scripts/01_eda.py
 python3 scripts/02_preprocess.py
 python3 scripts/03_train_models.py
@@ -27,10 +22,11 @@ python3 scripts/03_train_models.py
 
 | Step | Script | Output |
 |------|--------|--------|
-| Data | `00_generate_data.py` | `data/Assessment3B_data.csv` |
-| EDA | `01_eda.py` | `outputs/figures/fig01–06_*.png`, `outputs/eda_summary.json` |
+| EDA | `01_eda.py` | `outputs/figures/fig01–07_*.png`, `outputs/eda_summary.json` |
 | Preprocess | `02_preprocess.py` | `data/Assessment3B_clean.csv`, `outputs/preprocess_report.json` |
 | ML | `03_train_models.py` | `outputs/model_metrics.json`, confusion-matrix figures |
+
+Sliding windows (1024 samples, hop 256) extract fourteen accelerometer features before train/val/test splits.
 
 ## Class labels
 
@@ -44,4 +40,4 @@ python3 scripts/03_train_models.py
 
 ## Report
 
-Academic write-up: Project store `docs/MIA605A_Assessment3B_Report.md` (mirrored under repo `docs/` when synced).
+Academic write-up: `docs/MIA605A_Assessment3B_Report.md` (real Moodle metrics, November 2026).
